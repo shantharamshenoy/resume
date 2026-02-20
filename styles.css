@@ -329,7 +329,7 @@ body::before {
   display: grid;
 	align-items: center;
 	/* justify-content: space-between; */
-  grid-template-columns: 500px 1fr auto;
+  grid-template-columns: 1fr 1fr auto;
   gap: 16px;
 }
 
