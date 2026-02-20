@@ -1,5 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  --gold-soft: rgba(212, 175, 55, 0.18);
+  --gold-border: rgba(212, 175, 55, 0.35);
+  --gold-glow: rgba(212, 175, 55, 0.25);
+}
+
 html, body { height: 100%; }
 
 body {
@@ -84,14 +90,14 @@ body::before {
   font-weight: 700;
   margin: 0;
   letter-spacing: 1px;
-	color: #ffffff;
+	color: rgba(212, 175, 55, 0.8)
 }
 
 .hero-role {
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 400;
   margin-top: 8px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(212, 175, 55, 0.6)
 }
 
 /* ICONS */
@@ -167,19 +173,28 @@ body::before {
 }
 
 .hero-copy{
-  max-width: 960px;
+  max-width: 66%;
   flex: 1;
 }
 
 /* ASIDE: now 380px */
 .identity-card{
-  width: 480px;
+  width: 30%;
   padding: 16px;
   border-radius: 18px;
   background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--gold-soft);
   backdrop-filter: blur(8px);
 	animation: floatCard 6s ease-in-out infinite;
+	box-shadow:
+    0 0 20px rgba(212,175,55,0.12);
+}
+
+.identity-card:hover {
+  border-color: var(--gold-border);
+  box-shadow:
+    0 0 28px var(--gold-glow),
+    inset 0 0 20px rgba(212,175,55,0.05);
 }
 
 @keyframes floatCard {
@@ -190,10 +205,10 @@ body::before {
 /* Profile image in aside */
 .identity-pic{
   width: 100%;
-  height: 360px;
+  height: 200px;
   border-radius: 18px;
   object-fit: cover;
-  object-position: 50% 8%;
+  object-position: 50% 10%;
   border: 1px solid rgba(255,255,255,0.18);
 }
 
@@ -201,9 +216,13 @@ body::before {
 .acc{
   border-radius: 14px;
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 2px solid var(--gold-soft);
   padding: 14px 16px;
   margin-bottom: 14px;
+	transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .acc-title{
@@ -211,10 +230,11 @@ body::before {
   list-style: none;
   font-weight: 650;
   font-size: 1rem;
-  color: rgba(255,255,255,0.92);
   display: flex;
   align-items: center;
   justify-content: space-between;
+	color: rgba(255,255,255,0.95);
+  letter-spacing: 0.4px;
 }
 
 /* remove default triangle */
@@ -227,8 +247,24 @@ body::before {
   transform: translateY(-1px);
 }
 
+.acc[open] .acc-title {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(212,175,55,0.35);
+}
+
 .acc[open] .acc-title::after{
   content: "▴";
+}
+
+.acc:hover {
+  transform: translateY(-2px);
+}
+
+.acc[open] {
+  border-color: var(--gold-border);
+  box-shadow:
+    0 0 18px var(--gold-glow),
+    inset 0 0 18px rgba(212,175,55,0.05);
 }
 
 .acc:not([open]) .acc-body {
@@ -244,7 +280,8 @@ body::before {
 .acc-text{
   margin: 0;
   color: rgba(255,255,255,0.75);
-  line-height: 1.6;
+  line-height: 1.8;
+	padding: 5px 0;
 }
 
 /* EXPERIENCE TIMELINE */
@@ -290,12 +327,19 @@ body::before {
   cursor: pointer;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 6px 14px;
-  align-items: baseline;
+	align-items: center;
+	/* justify-content: space-between; */
+  grid-template-columns: 500px 1fr auto;
+  gap: 16px;
 }
 
 .tl-head::-webkit-details-marker { display:none; }
+
+.tl-company-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 .tl-role{
   font-weight: 650;
@@ -307,8 +351,39 @@ body::before {
   font-weight: 500;
 }
 
+/* .tl-logo{
+	max-height: 51px;
+} */
+/*
+.tl-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+} */
+
+.tl-company-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tl-logo {
+  /* width: 26px; */
+  height: 50px;
+  object-fit: contain;
+  padding: 4px;
+  border-radius: 6px;
+
+  background: rgba(255,255,255,0.86); /* soft glass bg */
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+}
+
 .tl-dates{
-  grid-column: 2;
+  grid-column: 3	;
   color: rgba(255,255,255,0.55);
   font-size: 0.88rem;
   text-align: right;

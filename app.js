@@ -550,4 +550,23 @@ document.addEventListener("visibilitychange", () => {
 
 window.addEventListener("resize", start);
 
+// -----------------------------
+// Accordion - auto close others
+// -----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const accordions = document.querySelectorAll(".acc");
+
+  accordions.forEach((acc) => {
+    acc.addEventListener("toggle", () => {
+      if (acc.open) {
+        accordions.forEach((other) => {
+          if (other !== acc) {
+            other.open = false;
+          }
+        });
+      }
+    });
+  });
+});
+
 start();
