@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shantharam | Orbit Resume</title>
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+	<canvas id="starfield"></canvas>
+
+	<header class="hero">
+		<div class="hero-left">
+			<h1 class="hero-name">Shantharam Shenoy</h1>
+			<h2 class="hero-role">Solution Architect • Engineering Leader</h2>
+		</div>
+
+		<div class="hero-right">
+			<!-- Website -->
+			<a href="https://shantharam.dev" target="_blank" rel="noopener" class="icon" aria-label="Website">
+				<i class="fa-solid fa-globe"></i>
+			</a>
+
+			<a href="https://github.com/shantharamshenoy" target="_blank" class="icon" aria-label="GitHub">
+				<i class="fa-brands fa-github"></i>
+			</a>
+
+			<a href="https://linkedin.com/in/shantharamsk" target="_blank" class="icon" aria-label="LinkedIn">
+				<i class="fa-brands fa-linkedin"></i>
+			</a>
+
+			<a href="mailto:shantharamshenoyk@gmail.com" class="icon" aria-label="Email">
+				<i class="fa-solid fa-envelope"></i>
+			</a>
+
+			<a href="assets/resume.pdf" download target="_blank" class="icon" aria-label="Download Resume">
+				<i class="fa-solid fa-download"></i>
+			</a>
+
+			<button id="soundToggle" class="icon-btn" aria-label="Sound off" title="Sound">
+				<i id="soundIcon" class="fa-solid fa-volume-xmark"></i>
+			</button>
+		</div>
+	</header>
+
+	<section class="hero-main">
+		<div class="hero-copy">
+
+			<!-- Accordion: Professional Summary -->
+			<details class="acc" open>
+				<summary class="acc-title">Professional Summary</summary>
+				<div class="acc-body">
+					<p class="acc-text">
+						Solution Architect & Engineering Leader with 15+ years building enterprise-grade platforms and leading
+						global teams.
+						Strong in cloud modernization, microservices, integrations, SDLC, and reliability engineering across
+						Insurance/Fintech
+						and large-scale domains.
+					</p>
+				</div>
+			</details>
+
+			<!-- Accordion: Experience -->
+			<details class="acc">
+				<summary class="acc-title">Experience</summary>
+				<div class="acc-body">
+
+					<div class="timeline">
+
+						<!-- Company 1 -->
+						<details class="tl-item" open>
+							<summary class="tl-head">
+								<span class="tl-role">Solution Lead / Architect</span>
+								<span class="tl-company">Neutrinos</span>
+								<span class="tl-dates">2019 — 2026</span>
+							</summary>
+							<div class="tl-body">
+								<ul>
+									<li>Led design & delivery of multi-geo B2B/B2C/B2E insurance platforms (Sales, Claims, Endorsements).
+									</li>
+									<li>Owned architecture & integrations; established CI/CD standards and improved release stability.
+									</li>
+									<li>Mentored cross-functional teams; drove cloud modernization and performance monitoring practices.
+									</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Company 2 (placeholder) -->
+						<details class="tl-item">
+							<summary class="tl-head">
+								<span class="tl-role">Senior Engineer</span>
+								<span class="tl-company">Company Name</span>
+								<span class="tl-dates">2016 — 2019</span>
+							</summary>
+							<div class="tl-body">
+								<ul>
+									<li>Key achievements…</li>
+									<li>Key achievements…</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Add more companies similarly -->
+					</div>
+
+				</div>
+			</details>
+
+		</div>
+
+		<aside class="identity-card">
+			<img src="assets/profile.jpg" class="identity-pic" alt="Shantharam Shenoy" />
+
+			<div class="skills">
+				<div class="skills-title">Skills</div>
+
+				<div class="skill-group">
+					<div class="skill-group-title">Architecture</div>
+					<div class="pill-row">
+						<span class="pill">System Design</span>
+						<span class="pill">Microservices</span>
+						<span class="pill">Integration</span>
+						<span class="pill">API Design</span>
+					</div>
+				</div>
+
+				<div class="skill-group">
+					<div class="skill-group-title">Cloud & DevOps</div>
+					<div class="pill-row">
+						<span class="pill">AWS</span>
+						<span class="pill">Azure</span>
+						<span class="pill">Docker</span>
+						<span class="pill">Kubernetes</span>
+						<span class="pill">CI/CD</span>
+					</div>
+				</div>
+
+				<div class="skill-group">
+					<div class="skill-group-title">Backend</div>
+					<div class="pill-row">
+						<span class="pill">Java</span>
+						<span class="pill">Spring Boot</span>
+						<span class="pill">Node.js</span>
+						<span class="pill">Express</span>
+					</div>
+				</div>
+
+				<div class="skill-group">
+					<div class="skill-group-title">Data</div>
+					<div class="pill-row">
+						<span class="pill">PostgreSQL</span>
+						<span class="pill">Redis</span>
+						<span class="pill">Kafka</span>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</section>
+	<script src="app.js"></script>
+</body>
+
+</html>
